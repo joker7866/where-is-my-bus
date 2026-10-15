@@ -1,0 +1,19 @@
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import { BrowserRouter } from 'react-router-dom'
+import './index.css'
+import App from './App.tsx'
+import { StoreProvider } from './data/store.tsx'
+import { DistrictProvider } from './data/DistrictContext.tsx'
+
+createRoot(document.getElementById('root')!).render(
+  <StrictMode>
+    <BrowserRouter>
+      <StoreProvider>
+        <DistrictProvider>
+          <App />
+        </DistrictProvider>
+      </StoreProvider>
+    </BrowserRouter>
+  </StrictMode>,
+)
